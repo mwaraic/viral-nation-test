@@ -23,5 +23,5 @@ urlpatterns = [
     path('api/count/', Count.as_view()),
     path('api/pg/data/', PGData.as_view()),
     path('api/mg/data/', MongoData.as_view()),
-    path('api/product/<int:product_id>', ProductData.as_view())
+    path('api/product/', ProductData.as_view())
 ]

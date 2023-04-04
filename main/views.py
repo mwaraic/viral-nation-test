@@ -5,6 +5,7 @@ from main.utils.pg import Pg
 from main.utils.mongo import Mongo
 from main.serializers import CountSerializer
 from rest_framework import status
+from main.models import Product
 
 class Count(APIView):
 
@@ -39,9 +40,9 @@ class MongoData(APIView):
     
 class ProductData(APIView):
 
-    def get(self, request, product_id):
+    def get(self, request):
         
-        data = get_product(product_id)
+        data = [get_product(product['id']) for product in Product.objects.all().values('id')]
         return Response(status=200, data=data)
     
 
