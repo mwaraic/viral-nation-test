@@ -29,7 +29,7 @@ def fetch_and_store_users(count:int):
 from django.core.cache import cache
 from main.models import Product
 
-def get_product(product_id):
+def get_product(product_id:int) -> dict:
     """
     Get Product Id from Cache or from DB if misses Cache
     """

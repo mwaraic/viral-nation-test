@@ -8,7 +8,7 @@ class Pg:
     def __init__(self):
         pass
 
-    def retrieve_data(self) -> dict:
+    def retrieve_data(self) -> list:
         """
         retrieve data from users table
         """
